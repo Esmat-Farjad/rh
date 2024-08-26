@@ -8,7 +8,6 @@ from django.views import View
 from openpyxl import Workbook
 from openpyxl.styles import Font, NamedStyle
 from openpyxl.utils import get_column_letter
-from django.core import serializers
 from rh.utils import DateTimeEncoder
 from ..models import ActivityPlan, Disaggregation, DisaggregationLocation, Project, TargetLocation
 from django.db.models import Prefetch
