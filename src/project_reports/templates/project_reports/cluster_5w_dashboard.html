@@ -186,7 +186,7 @@
                                     <tr class="border-b border-gray-e6 hover:bg-muted/50 ">
                                         <th class="h-12 text-left align-middle font-bold">Gender/Age</th>
                                         {% for domain in activity_domains %}<th class="h-12 text-left align-middle font-medium ">{{ domain }}</th>{% endfor %}
-                                        <th class="h-12 text-left align-middle font-bold">Total</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody class="">
@@ -196,7 +196,7 @@
                                             {% for domain in activity_domains %}
                                                 <td class="py-3 align-middle ">{{ data|get_item:domain|default:0|intcomma }}</td>
                                             {% endfor %}
-                                            <td class="py-3 align-middle">{{data.total|intcomma}}</td>
+                                            
                                         </tr>
                                     {% endfor %}
                                 </tbody>
