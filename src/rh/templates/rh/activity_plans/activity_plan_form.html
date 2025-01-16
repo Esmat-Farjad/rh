@@ -186,13 +186,13 @@
                                 <label for="implement_modality_type_id">Implement Modality</label>
                                 <p class="help-text">{{ cash_in_kind_form.implement_modality_type.help_text }}</p>
                                 <select 
-                                        name="implement_modality_type"
+                                        name="{{ cash_in_kind_form.implement_modality_type.name }}"
                                         id="implement_modality_type_id"
                                         hx-get="{% url 'get-transfer-mechanism-types' %}"
                                         hx-trigger="change"
                                         hx-target="#{{ cash_in_kind_form.transfer_mechanism_type.id_for_label }}"
                                         hx-swap="innerHTML"
-                                        required>
+                                        >
                                     {% for type in cash_in_kind_form.implement_modality_type.field.queryset %}
                                         <option value="{{ type.id }}" {% if type.id == cash_in_kind_form.implement_modality_type.value %}selected{% endif %}>{{ type }}</option>
                                     {% endfor %}
@@ -205,13 +205,13 @@
                                 <label for="{{ cash_in_kind_form.transfer_mechanism_type.id_for_label }}">Transfer Mechanism</label>
                                 <p class="help-text">{{ cash_in_kind_form.transfer_mechanism_type.help_text }}</p>
                                 <select 
-                                        name="transfer_mechanism_type"
+                                        name="{{ cash_in_kind_form.transfer_mechanism_type.name }}"
                                         id="{{ cash_in_kind_form.transfer_mechanism_type.id_for_label }}"
                                         hx-get="{% url 'get-unit-types' %}"
                                         hx-trigger="change"
                                         hx-target="#{{ cash_in_kind_form.unit_type.id_for_label }}"
                                         hx-swap="innerHTML"
-                                        required>
+                                        >
                                     {% for type in cash_in_kind_form.transfer_mechanism_type.field.queryset %}
                                         <option value="{{ type.id }}" {% if type.id == cash_in_kind_form.transfer_mechanism_type.value %}selected{% endif %}>{{ type }}</option>
                                     {% endfor %}
@@ -224,13 +224,13 @@
                                 <label for="{{cash_in_kind_form.unit_type.id_for_label}}">Unit Type / Ration Type</label>
                                 <p class="help-text" id="unit_type_help_text"></p>
                                 <select 
-                                        name="unit_type"
+                                        name="{{ cash_in_kind_form.unit_type.name }}"
                                         id="{{ cash_in_kind_form.unit_type.id_for_label }}"
                                         hx-get="{% url 'get-package-types' %}"
                                         hx-trigger="change"
                                         hx-target="#{{ cash_in_kind_form.package_type.id_for_label }}"
                                         hx-swap="innerHTML"
-                                        required>
+                                        >
                                     {% for type in cash_in_kind_form.unit_type.field.queryset %}
                                         <option value="{{ type.id }}" {% if type.id == cash_in_kind_form.unit_type.value %}selected{% endif %}>{{ type }}</option>
                                     {% endfor %}
@@ -244,7 +244,7 @@
                                 <label for="{{cash_in_kind_form.package_type.id_for_label}}">Package Type / Ration Size</label>
                                 <p class="help-text">{{ cash_in_kind_form.package_type.help_text }}</p>
                                 <select
-                                        name="package_type"
+                                        name="{{ cash_in_kind_form.package_type.name }}"
                                         id="{{ cash_in_kind_form.package_type.id_for_label }}">
                                     {% for type in cash_in_kind_form.package_type.field.queryset %}
                                         <option value="{{ type.id }}" {% if type.id == cash_in_kind_form.package_type.value %}selected{% endif %}>{{ type }}</option>
